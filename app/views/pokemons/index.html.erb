@@ -1,12 +1,21 @@
-<h1>Pokedex</h1>
+<div style='padding: 40px;'>
+  <h1>Pokedex</h1>
+</div>
 
 <div id="pokemons">
+<% i = 0 %>
   <% @pokemons.each do |pokemon| %>
-    <div class='pokemons-container'>
+    <div class='pokemons-container <%= pokemon.types[0].split('"')[7] %>'>
       <div>
-        <h3><%= link_to pokemon.name, pokemon_path(pokemon) %></h3>
+        <p>No.<%= i = i + 1 %></p>
+        <h3><%= link_to pokemon.name.capitalize, pokemon_path(pokemon), :class => 'link' %></h3>
         <% pokemon.types.each do |t| %>
-          <p><%= t.split(',')[1].split('"')[5] %></p>
+          <span
+            class='<%= t.split(',')[1].split('"')[5] %>'
+            style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))"
+            >
+            <%= t.split(',')[1].split('"')[5] %>
+          </span>
         <% end %>
       </div>
       <img src='<%= pokemon.url %>', class='img-pokemon'>
