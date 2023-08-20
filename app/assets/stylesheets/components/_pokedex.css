@@ -1,0 +1,23 @@
+#pokemons {
+  width: 100vw;
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.pokemons-container {
+  background-color: chartreuse;
+  width: 300px;
+  height: 140px;
+  border-radius: 25px;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.img-pokemon {
+  object-fit: contain;
+}

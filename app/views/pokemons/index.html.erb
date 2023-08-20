@@ -1,0 +1,15 @@
+<h1>Pokedex</h1>
+
+<div id="pokemons">
+  <% @pokemons.each do |pokemon| %>
+    <div class='pokemons-container'>
+      <div>
+        <h3><%= link_to pokemon.name, pokemon_path(pokemon) %></h3>
+        <% pokemon.types.each do |t| %>
+          <p><%= t.split(',')[1].split('"')[5] %></p>
+        <% end %>
+      </div>
+      <img src='<%= pokemon.url %>', class='img-pokemon'>
+    </div>
+  <% end %>
+</div>

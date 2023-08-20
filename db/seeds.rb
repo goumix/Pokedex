@@ -14,16 +14,19 @@ puts 'Database cleaned'
 
 url = 'https://pokeapi.co/api/v2/pokemon?offset=0&limit=151'
 pokemons = []
-JSON.parse(URI.open("#{url}").read)['results'].each do |pokemon|
+JSON.parse(URI.open(url.to_s).read)['results'].each do |pokemon|
   pokemons << pokemon['name']
 end
+p pokemons
 pokemons.each do |pokemon|
   poke = JSON.parse(URI.open("https://pokeapi.co/api/v2/pokemon/#{pokemon}").read)
   Pokemon.create(
     name: pokemon,
     height: poke['height'],
     weight: poke['weight'],
-    types: poke['types']
+    types: poke['types'],
+    url: poke['sprites']['other']['official-artwork']['front_default'],
+    url_shiny: poke['sprites']['other']['official-artwork']['front_shiny']
   )
 end
 puts 'Pokemons created!'
