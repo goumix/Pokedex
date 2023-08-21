@@ -13,13 +13,17 @@
         <%= t.split(',')[1].split('"')[5] %>
       </span>
     <% end %>
-  <% shiny = true %>
-  <button id="switch">Shiny</button>
-  <img src='<%= @pokemon.url %>', style='width: 300px;', id='img'>
+    <% shiny = true %>
+    <img src='<%= shiny ? @pokemon.url : @pokemon.url_shiny %>', style='width: 300px; padding: 5vh;', id='img'>
+    <button id="switch">Shiny</button>
   </div>
   <script>
-  document.getElementById("switch").addEventListener('click', (shiny) => {
-    document.getElementById("img").src = '<%= !shiny ? @pokemon.url : @pokemon.url_shiny %>'
-  })
+    document.getElementById("switch").addEventListener('click', () => {
+      if (document.getElementById("img").src === '<%= shiny ? @pokemon.url : @pokemon.url_shiny %>') {
+        document.getElementById("img").src = '<%= !shiny ? @pokemon.url : @pokemon.url_shiny %>'
+      } else {
+        document.getElementById("img").src = '<%= shiny ? @pokemon.url : @pokemon.url_shiny %>'
+      }
+    })
   </script>
 </div>
