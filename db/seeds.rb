@@ -20,11 +20,13 @@ end
 p pokemons
 pokemons.each do |pokemon|
   poke = JSON.parse(URI.open("https://pokeapi.co/api/v2/pokemon/#{pokemon}").read)
+  poke_type = []
+  poke['types'].each { |t| poke_type << t['type']['name'] }
   Pokemon.create(
     name: pokemon,
     height: poke['height'],
     weight: poke['weight'],
-    types: poke['types'],
+    types: poke_type,
     url: poke['sprites']['other']['official-artwork']['front_default'],
     url_shiny: poke['sprites']['other']['official-artwork']['front_shiny']
   )

@@ -1,4 +1,4 @@
-<div class='full-screen <%= @pokemon.types[0].split('"')[7] %>'>
+<div class='full-screen <%= @pokemon.types[0] %>'>
   <div style='padding: 40px;'>
     <h1><%= @pokemon.name.capitalize %></h1>
   </div>
@@ -7,10 +7,10 @@
     <p>Weight: <%= @pokemon.weight.to_f / 10 %> kg</p>
     <% @pokemon.types.each do |t| %>
       <span
-        class='<%= t.split(',')[1].split('"')[5] %>'
+        class='<%= t %>'
         style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))"
         >
-        <%= t.split(',')[1].split('"')[5] %>
+        <%= t %>
       </span>
     <% end %>
     <% shiny = true %>

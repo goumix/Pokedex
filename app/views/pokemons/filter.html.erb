@@ -1,9 +1,6 @@
 <div style='padding: 40px;'>
   <h1>Pokedex</h1>
   <%= link_to 'filter', pokemon_filter_path(), :class => 'link' %>
-  <%= simple_form_for :search, url: root_path, method: :get do |f| %>
-    <%= f.input :category, collection: Pokemon::Type, as: :check_boxes %>
-  <% end %>
 </div>
 
 <div id="pokemons">
