@@ -17,7 +17,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_20_134459) do
   create_table "pokemons", force: :cascade do |t|
     t.string "name"
     t.integer "height"
-    t.integer "weight"
+    t.integer  "weight"
     t.string "types", default: [], array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
