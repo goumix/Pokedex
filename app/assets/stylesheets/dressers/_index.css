@@ -1,0 +1,23 @@
+#dressers {
+  width: 100vw;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.dresser-container {
+  width: 300px;
+  height: 140px;
+  border-radius: 25px;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: solid 1px black;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}

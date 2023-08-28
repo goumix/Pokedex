@@ -2,7 +2,7 @@
 <%= render 'components/searchbar' %>
 <div id="pokemons">
   <% @pokemons.each do |pokemon| %>
-      <%= link_to pokemon_path(pokemon), class: "pokemons-container #{pokemon.types[0]}" do %>
+      <%= link_to pokemon_path(pokemon), class: "pokemon-container #{pokemon.types[0]}" do %>
       <div>
         <p>No.<%= pokemon.numero_pokedex %></p>
         <h3><%= pokemon.name.capitalize %></h3>

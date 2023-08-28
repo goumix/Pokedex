@@ -5,5 +5,6 @@ class DressersController < ApplicationController
 
   def show
     @dresser = Dresser.find(params[:id])
+    @pokemons = Pokemon.where(dresser_id: params[:id])
   end
 end

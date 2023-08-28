@@ -1,9 +1,12 @@
 <%= render 'components/navbar' %>
-<div id="pokemons">
+<div id="dressers">
   <% @dressers.each do |dresser| %>
-    <div class='pokemons-container'>
-      <h3><%= link_to dresser.name.capitalize, dresser_path(dresser), :class => 'link' %></h3>
+    <%= link_to dresser_path(dresser), class: "dresser-container" do %>
+      <div>
+        <h3><%= dresser.name.capitalize %></h3>
+        <p style='padding-right: 50px;'><%= dresser.description.first(50) %>...</p>
+      </div>
       <img src='<%= dresser.url %>', class='img-pokemon'>
-    </div>
+    <% end %>
   <% end %>
 </div>

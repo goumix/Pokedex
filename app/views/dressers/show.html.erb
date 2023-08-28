@@ -1,11 +1,30 @@
 <div class='full-screen'>
-  <div style='padding: 40px;'>
-    <h1><%= @dresser.name.capitalize %></h1>
+  <div class='container-pokemon-show'>
+    <div style='padding: 40px;'>
+      <h1><%= @dresser.name.capitalize %></h1>
+    </div>
+    <div style='width: 100vw; display: flex; flex-direction: column; align-items: center; gap: 10px;'>
+      <p><%= @dresser.description %></p>
+      <img src='<%= @dresser.url %>', style='height: 500px; padding: 5vh;', id='img'>
+    </div>
   </div>
-  <div style='width: 100vw; display: flex; flex-direction: column; align-items: center; gap: 10px;'>
-    <p><%= @dresser.description %></p>
-    <img src='<%= @dresser.url %>', style='height: 500px; padding: 5vh;', id='img'>
+  <div id="pokemons-dresser">
+    <% @pokemons.each do |pokemon| %>
+        <%= link_to pokemon_path(pokemon), class: "pokemon-container #{pokemon.types[0]}" do %>
+        <div>
+          <p>No.<%= pokemon.numero_pokedex %></p>
+          <h3><%= pokemon.name.capitalize %></h3>
+          <% pokemon.types.each do |t| %>
+            <span
+              class='<%= t %>'
+              style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))"
+              >
+              <%= t %>
+            </span>
+          <% end %>
+        </div>
+        <img src='<%= pokemon.url %>', class='img-pokemon'>
+        <% end %>
+    <% end %>
   </div>
-</div>
-<div>
 </div>
