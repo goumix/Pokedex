@@ -1,0 +1,9 @@
+<%= form_with url: pokemons_path, method: :get, html: { autocomplete: "off" }, class: "searchbar" do %>
+  <%= text_field_tag :query,
+      params[:query],
+      class: "input-search",
+      placeholder: "..."
+    %>
+  <%= submit_tag "Rechercher", name: "", class: "btn-search" %>
+  <%= link_to 'Refresh', pokemons_path, :class => 'btn-search' %>
+<% end %>

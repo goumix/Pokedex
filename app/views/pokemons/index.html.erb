@@ -1,4 +1,5 @@
 <%= render 'components/navbar'%>
+<%= render 'components/searchbar' %>
 <div id="pokemons">
   <% @pokemons.each do |pokemon| %>
     <div class='pokemons-container <%= pokemon.types[0] %>'>

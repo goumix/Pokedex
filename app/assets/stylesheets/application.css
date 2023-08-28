@@ -29,6 +29,11 @@ h1 {
   color: black;
 }
 
+textarea:focus, input:focus{
+  outline: none;
+}
+
 @import "components/_navbar.css";
+@import "components/_searchbar.css";
 @import "_pokedex.css";
 @import "_pokemon.css";
