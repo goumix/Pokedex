@@ -2,10 +2,10 @@
 <%= render 'components/searchbar' %>
 <div id="pokemons">
   <% @pokemons.each do |pokemon| %>
-    <div class='pokemons-container <%= pokemon.types[0] %>'>
+      <%= link_to pokemon_path(pokemon), class: "pokemons-container #{pokemon.types[0]}" do %>
       <div>
         <p>No.<%= pokemon.numero_pokedex %></p>
-        <h3><%= link_to pokemon.name.capitalize, pokemon_path(pokemon), :class => 'link' %></h3>
+        <h3><%= pokemon.name.capitalize %></h3>
         <% pokemon.types.each do |t| %>
           <span
             class='<%= t %>'
@@ -16,6 +16,6 @@
         <% end %>
       </div>
       <img src='<%= pokemon.url %>', class='img-pokemon'>
-    </div>
+      <% end %>
   <% end %>
 </div>
