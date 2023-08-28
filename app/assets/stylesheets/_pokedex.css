@@ -19,6 +19,10 @@
   border: solid 1px black;
 }
 
+.pokemons-container:hover {
+  background-color: white;
+}
+
 .img-pokemon {
   object-fit: contain;
 }

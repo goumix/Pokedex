@@ -29,9 +29,6 @@ h1 {
   color: black;
 }
 
-.link:hover {
-  color: white;
-}
 @import "components/_navbar.css";
 @import "_pokedex.css";
 @import "_pokemon.css";

@@ -1,6 +1,9 @@
-<% nav = [['Pokedex', 'pokemons', ''], ['Tainers', 'dressers']] %>
 <nav>
+  <% nav = [['Pokedex', 'pokemons', 'pokedex.png', 'red'], ['Tainers', 'dressers', 'teams.png', 'yellow']] %>
   <% nav.each do |i| %>
-    <h1><%= link_to i[0], i[1], :class => 'link' %></h1>
+    <%= link_to i[1], class: "navbar-div #{i[3]}" do %>
+      <h1 class='link'><%= i[0] %></h1>
+      <%= image_tag i[2], class: "navbar-img" %>
+    <% end %>
   <% end %>
 </nav>
