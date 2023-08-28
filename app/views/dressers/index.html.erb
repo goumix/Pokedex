@@ -1,9 +1,4 @@
-<div style='padding: 40px;'>
-  <h1>Trainers</h1>
-</div>
-
 <div id="pokemons">
-<% i = 0 %>
   <% @dressers.each do |dresser| %>
     <div class='pokemons-container'>
       <h3><%= link_to dresser.name.capitalize, dresser_path(dresser), :class => 'link' %></h3>

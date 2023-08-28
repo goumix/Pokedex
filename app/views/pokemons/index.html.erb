@@ -1,7 +1,4 @@
-<div style='padding: 40px;'>
-  <h1>Pokedex</h1>
-</div>
-
+<%= render 'components/navbar'%>
 <div id="pokemons">
   <% @pokemons.each do |pokemon| %>
     <div class='pokemons-container <%= pokemon.types[0] %>'>
