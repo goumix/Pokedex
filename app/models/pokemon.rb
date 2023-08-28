@@ -1,3 +1,3 @@
 class Pokemon < ApplicationRecord
-  TYPES = ['Feu', 'Eau']
+  belongs_to :dresser, optional: true
 end
