@@ -1,7 +1,7 @@
-<div class='full-screen'>
+<div class="full-screen <%= @dresser.pokemons[1].types[0] %>">
   <div class='container-dresser-show'>
     <h1><%= @dresser.name.capitalize %></h1>
-    <p><%= @dresser.description %></p>
+    <p style='padding-inline: 100px;'><%= @dresser.description %></p>
     <img src='<%= @dresser.url %>', style='height: 500px; padding: 5vh;', id='img'>
   </div>
   <div id="dresser-pokemons">

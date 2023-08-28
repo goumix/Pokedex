@@ -1,7 +1,7 @@
 <%= render 'components/navbar' %>
 <div id="dressers">
   <% @dressers.each do |dresser| %>
-    <%= link_to dresser_path(dresser), class: "dresser-container" do %>
+    <%= link_to dresser_path(dresser), class: "dresser-container #{dresser.pokemons[1].types[0]}" do %>
       <div>
         <h3><%= dresser.name.capitalize %></h3>
         <p style='padding-right: 50px;'><%= dresser.description.first(50) %>...</p>

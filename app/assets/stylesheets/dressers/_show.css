@@ -1,3 +1,7 @@
+.full-screen {
+    pointer-events: none;
+}
+
 .container-dresser-show {
   width: 50vw;
   height: 100vh;
