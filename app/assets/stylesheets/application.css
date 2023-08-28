@@ -38,3 +38,4 @@ textarea:focus, input:focus{
 @import "_pokedex.css";
 @import "_pokemon.css";
 @import "dressers/_index.css";
+@import "dressers/_show.css";

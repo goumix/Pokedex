@@ -1,14 +1,10 @@
 <div class='full-screen'>
-  <div class='container-pokemon-show'>
-    <div style='padding: 40px;'>
-      <h1><%= @dresser.name.capitalize %></h1>
-    </div>
-    <div style='width: 100vw; display: flex; flex-direction: column; align-items: center; gap: 10px;'>
-      <p><%= @dresser.description %></p>
-      <img src='<%= @dresser.url %>', style='height: 500px; padding: 5vh;', id='img'>
-    </div>
+  <div class='container-dresser-show'>
+    <h1><%= @dresser.name.capitalize %></h1>
+    <p><%= @dresser.description %></p>
+    <img src='<%= @dresser.url %>', style='height: 500px; padding: 5vh;', id='img'>
   </div>
-  <div id="pokemons-dresser">
+  <div id="dresser-pokemons">
     <% @pokemons.each do |pokemon| %>
         <%= link_to pokemon_path(pokemon), class: "pokemon-container #{pokemon.types[0]}" do %>
         <div>
