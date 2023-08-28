@@ -15,12 +15,12 @@ puts 'Database cleaned'
 
 
 puts 'Create dressers...'
-Dresser.create!(name: 'Sacha', url: 'https://www.pokepedia.fr/images/thumb/a/ae/Sacha-Anim%C3%A9_LV.png/350px-Sacha-Anim%C3%A9_LV.png')
-Dresser.create!(name: 'Olga', url: 'https://www.pokepedia.fr/images/thumb/1/19/Olga-LGPE.png/500px-Olga-LGPE.png')
-Dresser.create!(name: 'Aldo', url: 'https://www.pokepedia.fr/images/thumb/4/42/Aldo-LGPE.png/1200px-Aldo-LGPE.png')
-Dresser.create!(name: 'Agatha', url: 'https://www.pokepedia.fr/images/thumb/8/8b/Agatha-LGPE.png/500px-Agatha-LGPE.png')
-Dresser.create!(name: 'Peter', url: 'https://www.pokepedia.fr/images/thumb/e/e3/Peter-LGPE.png/500px-Peter-LGPE.png')
-Dresser.create!(name: 'Blue', url: 'https://www.pokepedia.fr/images/thumb/8/87/Blue-LGPE.png/350px-Blue-LGPE.png')
+Dresser.create!(name: 'Sacha', description: "Sacha Ketchum est le personnage principal de Pokémon, la série, et de divers mangas basés sur l'anime. C'est un Dresseur Pokémon originaire de Bourg Palette qui rêve de devenir Maître Pokémon.", url: 'https://www.pokepedia.fr/images/thumb/a/ae/Sacha-Anim%C3%A9_LV.png/350px-Sacha-Anim%C3%A9_LV.png')
+Dresser.create!(name: 'Olga', description: "Olga est membre du Conseil 4 de la Ligue Indigo. Elle est spécialisée dans les Pokémon et les attaques Glace.", url: 'https://www.pokepedia.fr/images/thumb/1/19/Olga-LGPE.png/500px-Olga-LGPE.png')
+Dresser.create!(name: 'Aldo', description: "Aldo est membre du Conseil 4 de la Ligue Indigo. Il est spécialisé dans les Pokémon Combat.", url: 'https://www.pokepedia.fr/images/thumb/4/42/Aldo-LGPE.png/1200px-Aldo-LGPE.png')
+Dresser.create!(name: 'Agatha', description: "Agatha est membre du Conseil 4 de la Ligue Indigo. Spécialisée dans les Pokémon Spectre, son équipe est majoritairement composée de Pokémon possédant une apparence effrayante ou intimidante.", url: 'https://www.pokepedia.fr/images/thumb/8/8b/Agatha-LGPE.png/500px-Agatha-LGPE.png')
+Dresser.create!(name: 'Peter', description: "Peter est un membre éminent du Conseil 4 de la Ligue Indigo, dont il a fini par prendre la tête en tant que Maître. Il est spécialisé dans les Pokémon de type Dragon, bien qu'il utilise majoritairement des Pokémon de type Vol.", url: 'https://www.pokepedia.fr/images/thumb/e/e3/Peter-LGPE.png/500px-Peter-LGPE.png')
+Dresser.create!(name: 'Blue', description: "Blue est le petit-fils du Professeur Chen, mais aussi et surtout le rival du protagoniste dans Pokémon Rouge, Bleu et Jaune et Pokémon Rouge Feu et Vert Feuille. Parmi les personnages les plus anciens et les plus récurrents de la licence, ce Dresseur est reconnaissable à sa coiffure ébouriffée.", url: 'https://www.pokepedia.fr/images/thumb/8/87/Blue-LGPE.png/350px-Blue-LGPE.png')
 puts 'Dressers created!'
 
 puts 'Create pokemons...'
@@ -40,7 +40,8 @@ pokemons.each do |pokemon|
     weight: poke['weight'],
     types: poke_type,
     url: poke['sprites']['other']['official-artwork']['front_default'],
-    url_shiny: poke['sprites']['other']['official-artwork']['front_shiny']
+    url_shiny: poke['sprites']['other']['official-artwork']['front_shiny'],
+    numero_pokedex: poke['id']
   )
 end
 puts 'Pokemons created!'

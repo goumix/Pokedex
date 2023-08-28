@@ -3,11 +3,10 @@
 </div>
 
 <div id="pokemons">
-<% i = 0 %>
   <% @pokemons.each do |pokemon| %>
     <div class='pokemons-container <%= pokemon.types[0] %>'>
       <div>
-        <p>No.<%= i = i + 1 %></p>
+        <p>No.<%= pokemon.numero_pokedex %></p>
         <h3><%= link_to pokemon.name.capitalize, pokemon_path(pokemon), :class => 'link' %></h3>
         <% pokemon.types.each do |t| %>
           <span
