@@ -22,6 +22,10 @@
   color: black;
 }
 
+.pokemon-container:hover {
+  background-color: white;
+}
+
 .img-pokemon {
   object-fit: contain;
 }
