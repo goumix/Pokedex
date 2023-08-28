@@ -7,6 +7,23 @@
   align-items: center;
 }
 
+.container-pokemon-show {
+  width: 50vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.container-dresser-show {
+  width: 50vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
 
 #switch {
     padding-inline: 10px;
