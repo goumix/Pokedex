@@ -17,14 +17,10 @@
   </div>
   <% if @pokemon.dresser != nil %>
     <div class='container-dresser-show'>
-      <h1>
-        <%= link_to dresser_path(@pokemon.dresser), class: 'link' do %>
-          Trainer : <%= @pokemon.dresser.name.capitalize %>
-        <% end %>
-      </h1>
-      <p>Height: 0 cm</p>
-      <p>Weight: kg</p>
-      <img src='<%= @pokemon.dresser.url %>', style='height: 500px; padding: 5vh;', id='img'>
+      <%= link_to dresser_path(@pokemon.dresser), style: 'text-decoration: none;' do %>
+        <h1 class='link'>Trainer : <%= @pokemon.dresser.name.capitalize %></h1>
+        <img src='<%= @pokemon.dresser.url %>', style='height: 500px; padding: 5vh;', id='img'>
+      <% end %>
     </div>
   <% end %>
 </div>
