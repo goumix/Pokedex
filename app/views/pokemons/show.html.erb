@@ -1,4 +1,9 @@
 <div class='full-screen <%= @pokemon.types[0] %>'>
+  <% if @pokemon.url_card != nil %>
+    <div style='width: 600px; display: flex; justify-content: center;'>
+      <img src="<%=@pokemon.url_card %>" alt="" style='height: 400px; border-radius: 15px;'>
+    </div>
+  <% end %>
   <div class='container-pokemon-show'>
     <h1><%= @pokemon.name.capitalize %></h1>
     <p>Height: <%= @pokemon.height %>0 cm</p>

@@ -29,7 +29,6 @@ pokemons = []
 JSON.parse(URI.open(url.to_s).read)['results'].each do |pokemon|
   pokemons << pokemon['name']
 end
-p pokemons
 pokemons.each do |pokemon|
   poke = JSON.parse(URI.open("https://pokeapi.co/api/v2/pokemon/#{pokemon}").read)
   poke_type = []
@@ -53,7 +52,6 @@ aldo_pokemons = ['onix', 'machamp', 'hitmonlee', 'hitmonchan']
 agatha_pokemons = ['gengar', 'golbat', 'arbok']
 peter_pokemons = ['gyarados', 'seadra', 'dragonite', 'aerodactyl']
 blue_pokemons = ['pinsir', 'alakazam', 'exeggutor', 'arcanine', 'blastoise']
-
 dressers_pokemons = [sacha_pokemons, olga_pokemons, aldo_pokemons, agatha_pokemons, peter_pokemons, blue_pokemons]
 i = 0
 dressers_pokemons.each do |dresser_pokemons|
@@ -66,3 +64,22 @@ dressers_pokemons.each do |dresser_pokemons|
   i += 1
 end
 puts 'Pokemon linked!'
+
+puts 'Add url_card...'
+alakazam = ['alakazam', 'https://www.pokecardex.com/assets/images/sets/BS/HD/1.jpg']
+blastoise = ['blastoise', 'https://www.pokecardex.com/assets/images/sets/BS/HD/2.jpg']
+chansey = ['chansey', 'https://www.pokecardex.com/assets/images/sets/BS/HD/3.jpg']
+charizard = ['charizard', 'https://www.pokecardex.com/assets/images/sets/BS/HD/4.jpg']
+gyarados = ['gyarados', 'https://www.pokecardex.com/assets/images/sets/BS/HD/6.jpg']
+machamp = ['machamp', 'https://www.pokecardex.com/assets/images/sets/BS/HD/8.jpg']
+mewtwo = ['mewtwo', 'https://www.pokecardex.com/assets/images/sets/BS/HD/10.jpg']
+nidoking = ['nidoking', 'https://www.pokecardex.com/assets/images/sets/BS/HD/11.jpg']
+raichu = ['raichu', 'https://www.pokecardex.com/assets/images/sets/BS/HD/14.jpg']
+venusaur = ['venusaur', 'https://www.pokecardex.com/assets/images/sets/BS/HD/15.jpg']
+zapdos = ['zapdos', 'https://www.pokecardex.com/assets/images/sets/BS/HD/16.jpg']
+pokemons = [alakazam, blastoise, chansey, charizard, gyarados, machamp, mewtwo, nidoking, raichu, venusaur, zapdos]
+pokemons.each do |pokemon|
+  poke = Pokemon.find_by(name: pokemon[0])
+  poke.update(url_card: pokemon[1])
+end
+puts 'Url_card added!'

@@ -21,3 +21,7 @@
   text-decoration: none;
   color: black;
 }
+
+.dresser-container:hover {
+  background-color: white;
+}
