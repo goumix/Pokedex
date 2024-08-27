@@ -1,5 +1,7 @@
 # Pokedex
 
+<img width="1000" alt="pokedex" src="https://github.com/user-attachments/assets/fef53ae8-5c63-45ab-8ecd-bf1ef185f433">
+
 ## Introduction
 
 Welcome to my **Pokedex**, a Ruby on Rails application that allows users to explore and interact with the first generation of Pokémon. This project uses PokéAPI, a public API that provides data about Pokémon.
